@@ -16,10 +16,11 @@ from fastapi import FastAPI, File, UploadFile
 from PIL import Image
 import torchvision.transforms as transforms
 from fastapi.middleware.cors import CORSMiddleware
+app = FastAPI(title="MNIST CNN API")
 # Allow frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"]
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
