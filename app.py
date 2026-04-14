@@ -16,7 +16,8 @@ from fastapi import FastAPI, File, UploadFile
 from PIL import Image
 import torchvision.transforms as transforms
 from fastapi.middleware.cors import CORSMiddleware
-app = FastAPI(title="MNIST CNN API")
+app = FastAPI(title="Savita API")
+
 # Allow frontend access
 app.add_middleware(
     CORSMiddleware,
@@ -25,7 +26,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # -----------------------------
 # 1. Define Model (same as training)
