@@ -17,6 +17,10 @@ from PIL import Image
 import torchvision.transforms as transforms
 from fastapi.middleware.cors import CORSMiddleware
 
+# -----------------------------
+# 3. FastAPI App
+# -----------------------------
+app = FastAPI(title="Savita MNIST CNN API")
 
 # Allow frontend access
 app.add_middleware(
@@ -68,10 +72,7 @@ model.load_state_dict(torch.load("cnn_mnist_weights.pth", map_location=device))
 model.to(device)
 model.eval()
 
-# -----------------------------
-# 3. FastAPI App
-# -----------------------------
-app = FastAPI(title="Savita MNIST CNN API")
+
 
 # -----------------------------
 # 4. Image Preprocessing
