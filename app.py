@@ -16,7 +16,7 @@ from fastapi import FastAPI, File, UploadFile
 from PIL import Image
 import torchvision.transforms as transforms
 from fastapi.middleware.cors import CORSMiddleware
-app = FastAPI(title="Savita API")
+
 
 # Allow frontend access
 app.add_middleware(
@@ -71,7 +71,7 @@ model.eval()
 # -----------------------------
 # 3. FastAPI App
 # -----------------------------
-app = FastAPI(title="MNIST CNN API")
+app = FastAPI(title="Savita MNIST CNN API")
 
 # -----------------------------
 # 4. Image Preprocessing
