@@ -107,6 +107,5 @@ async def predict(file: UploadFile = File(...)):
         _, predicted = torch.max(outputs, 1)
 
     return {
-        "filename": file.filename,
-        "predicted_digit": int(predicted.item())
+        "prediction": int(predicted.item())
     }
